@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <Title>
+        Article | All
+    </Title>
+</head>
+<%- include("../partials/head"); %>
+
+<body>
+    <%- include("../partials/navbar"); %>
+    <div class="container m-4">
+    <% articles.forEach((i)=> { %> <% if(i.approved) { %>
+        <div>
+            <h1>
+                <%= i.title %>
+            </h1>
+
+            <p>
+                <%= i.body %>
+            </p>
+
+            <a href="/article/<%= i.id %>">
+                Baca lebih lanjut
+            </a>
+
+            <br>
+        </div>
+        <% } %> <% }) %>
+    </div>
+</body>
+
+</html>
